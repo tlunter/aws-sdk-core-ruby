@@ -459,7 +459,8 @@
       "members":{
         "name":{"shape":"id"},
         "uniqueId":{"shape":"id"},
-        "description":{"shape":"string"}
+        "description":{"shape":"string"},
+        "tags":{"shape":"tagMap"}
       }
     },
     "CreatePipelineOutput":{
@@ -963,6 +964,23 @@
     "idList":{
       "type":"list",
       "member":{"shape":"id"}
+    },
+    "tagKey":{
+      "type":"string",
+      "min":1,
+      "max":128
+    },
+    "tagValue":{
+      "type":"string",
+      "min":0,
+      "max":256
+    },
+    "tagMap":{
+      "type":"map",
+      "min":0,
+      "max":10,
+      "key": {"shape":"tagKey"},
+      "value": {"shape":"tagValue"}
     },
     "int":{"type":"integer"},
     "longString":{
